@@ -17,7 +17,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/home', function () {
     return view('backend.home');
-});
-Route::get('/', function () {
-    return view('welcome');
-});
+})->name('dashboard');
+
+Route::get('/table', function () {
+    return view('backend.table');
+})->name('table');
+
+
+// Route::get('/', function () {
+//     return view('welcome');
+// });
