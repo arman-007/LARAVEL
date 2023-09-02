@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryControler;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,6 +28,6 @@ Route::get('/chart', function () {
     return view('backend.chart');
 })->name('chart');
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/categories', [CategoryControler::class, 'index'])->name('categories.index');
+
+

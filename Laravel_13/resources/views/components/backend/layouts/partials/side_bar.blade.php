@@ -55,9 +55,9 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                     Charts
                 </a>
-                <a class="nav-link" href="{{ route('table') }}">
+                <a class="nav-link" href="{{ route('categories.index') }}">
                     <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                    Tables
+                    Categories
                 </a>
             </div>
         </div>
