@@ -25,7 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        // echo "Rolling back table";
         Schema::dropIfExists('categories');
     }
 };
