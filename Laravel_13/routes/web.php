@@ -23,6 +23,9 @@ Route::get('/table', function () {
     return view('backend.table');
 })->name('table');
 
+Route::get('/chart', function () {
+    return view('backend.chart');
+})->name('chart');
 
 // Route::get('/', function () {
 //     return view('welcome');

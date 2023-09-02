@@ -2,7 +2,7 @@
 
 
     <x-slot name=pageTitle>
-        table
+        Table
     </x-slot>
 
 
