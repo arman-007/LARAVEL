@@ -15,9 +15,17 @@
     <div class="card mb-4">
         <div class="card-header">
             <i class="fas fa-table me-1"></i>
-            Add New
+            List of Categories 
+            <a href="{{ route('categories.create') }}" class="btn btn-secondary btn-sm">Add New</a>
         </div>
         <div class="card-body">
+            @if(Session("message"))
+                <div class="alert alert-success">
+                    <strong>
+                        {{ Session("message") }}
+                    </strong>
+                </div>
+            @endif
             <table id="datatablesSimple">
                 <thead>
                     <tr>
@@ -26,10 +34,12 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach ($categories as $category)
                     <tr>
-                        <td>Donna Snider</td>
-                        <td>Customer Support</td>
+                        <td> {{ $category-> title }} </td>
+                        <td> {{ $category-> description }} </td>
                     </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>
