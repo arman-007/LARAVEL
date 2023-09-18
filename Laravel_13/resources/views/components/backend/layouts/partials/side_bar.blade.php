@@ -63,6 +63,10 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                     Categories
                 </a>
+                <a class="nav-link" href="{{ route('products.index') }}">
+                    <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                    Products
+                </a>
             </div>
         </div>
         <div class="sb-sidenav-footer">

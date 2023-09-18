@@ -2,23 +2,23 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 
-class CategoryControler extends Controller
+class ProductController extends Controller
 {
     public function index(){
         
-        $categories = Category::latest()->get();  
-        // dd($categories);
-        return view('backend.categories.index', [
-            'categories' => $categories
+        $products = Product::latest()->get();  
+        // dd($products);
+        return view('backend.products.index', [
+            'products' => $products
         ]);
     }
     
     public function create(){ 
-        return view('backend.categories.create');
+        return view('backend.products.create');
     }
     
     public function store(Request $request){ 
@@ -29,12 +29,12 @@ class CategoryControler extends Controller
                 'description' => ['required', 'min:10'],
             ]);
 
-            Category::create([
+            Product::create([
                 'title' => $request->title,
                 'description' => $request->description,
             ]);
 
-            return redirect()->route('categories.index')->with('message', 'Task is successfully stored!');
+            return redirect()->route('products.index')->with('message', 'Task is successfully stored!');
         }
 
         catch(QueryException $e){
@@ -43,12 +43,12 @@ class CategoryControler extends Controller
         
     }
 
-    public function show(Category $category){
+    public function show(Product $product){
         // dd($id);
         // $category = Category::findorFail();
         // dd($category);
-        return view('backend.categories.show', [
-            'category' => $category,
+        return view('backend.products.show', [
+            'product' => $product,
         ]);
     }
 }
